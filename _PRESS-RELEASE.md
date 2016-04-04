@@ -18,27 +18,35 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Watchful - a movie list
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  For people who love movies, and want to keep track of the movies they've watched
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  With Watchful, you can add movies to your queue, keep track of movies you've watched, add notes/reviews/recommendations for your friends, organize movie nights
 
 ## Problem ##
   > Describe the problem your product solves.
+  Right now there's no easy place to look up interesting movies, and with one click, add it to a queue so you'll remember to watch them. You may spend some time researching interesting movies, but forgetting to write them down and at a loss of what to watch when it's movie night.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  Not only can you keep track of movies and keep a list, you now have a place to share your experience with a movie with your friends
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Create an accout, then start adding movies and connecting with your friends.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "With Watchful, I can easily recommend movies to my friends."
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  
