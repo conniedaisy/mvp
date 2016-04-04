@@ -1,0 +1,20 @@
+<div id='container' ng-controller='SearchController'>
+
+  <div class="navigation">
+    <ul>
+      <li><a href="#/mymovies">My Movies</a></li>
+      <li><a class='selected' href="#/search">Search</a></li>
+    </ul>
+  </div>
+
+  <h2>Search</h2>
+  <form name="searchForm" ng-submit="searchTitle()" novalidate>
+    <input name="input" type="search"
+      placeholder="Search titles" required
+    />
+    <button>search</button>
+  </form>
+
+</div>
+
+
