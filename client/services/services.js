@@ -4,11 +4,13 @@ angular.module('watchful.services', ['watchful.moviedb'])
 
   var byKeyword = function(keyword) {
     // use theMovieDb getMovies method
-    console.log("TheMOvieDb: ", TheMovieDb);
-    TheMovieDb.getMovies(keyword, function(error) {
-      console.log(error);
-    }, function(success) {
-      console.log(success); 
+    // console.log("TheMOvieDb: ", TheMovieDb);
+    return TheMovieDb.getMovies(keyword, function(success) {
+      console.log('success!');
+      return success;
+    }, function(error) {
+      console.log('there is an error');
+      console.log('error: ', error);
     });
   };
 

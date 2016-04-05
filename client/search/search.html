@@ -16,6 +16,16 @@
     <button>search</button>
   </form>
 
+  <div class="results">
+    <div class="result"
+        ng-repeat="result in data.results">
+      <!-- <img src="assets/redirect_icon.png"> -->
+      <div class="info">
+        <div class="title">{{ result.title }}</div>
+        <div class="year">{{ result["release_date"] }}</div>
+    </div>
+  </div>
+
 </div>
 
 
