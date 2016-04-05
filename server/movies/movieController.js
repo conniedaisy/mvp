@@ -14,7 +14,7 @@ module.exports = {
 
   // for app.get('/mymovies')
   // get all movies from MongoDB
-  allMovies: function(request, response, next) {
+  getAllMovies: function(request, response, next) {
     findAllMovies({}) // returns all movies in an array
     .then(function(movies) {
       response.json(movies);
@@ -28,15 +28,19 @@ module.exports = {
   // if movie exists in database, respond with movie info
   // else, add movie to database
   addMovie: function(request, response, next) {
+    console.log('addMovie request is sent');
     helpers.collectData(request, function(data) {
       console.log('request is: ', JSON.parse(data).id);
       var data = JSON.parse(data);
       // check if movie already exists in database using movieID
-      var id = data.id;
-      findMovie({id: id}, function(found) {
+      console.log('data received: ', data);
+      // HERE IS WHERE IT BREAKS
+      findMovie({id: data.id}, function(found) {
+        console.log('checking if movie already exists');
         if (found) {
           response.send(found);
         } else {
+          console.log('movie not found, adding new movie');
           // post
           var newMovie = {
             id: data.id,
@@ -46,9 +50,11 @@ module.exports = {
             watched: 0
           }
           createMovie(newMovie, function(success, error) {
+            console.log('success adding movie');
             if (success) {
               response.json(success);
             } else {
+              console.log('error adding movie');
               response.send(error);
             }
           });

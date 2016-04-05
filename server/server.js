@@ -19,15 +19,7 @@ app.get('/', function(request, response) {
 });
 
 // get all movies for user from database
-app.get('/mymovies', function(request, response) {
-
-});
-
-// send API request
-// search title
-app.post('/search', function(request, response) {
-
-});
+app.get('/api/mymovies', movieController.getAllMovies);
 
 app.post('/api/mymovies', movieController.addMovie);
 
