@@ -4,7 +4,7 @@ angular.module('watchful.mymovies', [])
   // console.log('inside MymoviesController');
   $scope.movies = {};
 
-  $scope.displayMovies = function() {
+  var displayMovies = function() {
     MovieTitle.getAll()
     .then(function(movies) {
       console.log(movies);
@@ -15,4 +15,6 @@ angular.module('watchful.mymovies', [])
     });
   };
 
+  displayMovies();
+  
 });

@@ -15,8 +15,10 @@ module.exports = {
   // for app.get('/mymovies')
   // get all movies from MongoDB
   getAllMovies: function(request, response, next) {
+    console.log('getting all movies');
     findAllMovies({}) // returns all movies in an array
     .then(function(movies) {
+      console.log(movies);
       response.json(movies);
     })
     .fail(function(err) {

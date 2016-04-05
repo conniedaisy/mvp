@@ -1,5 +1,10 @@
 var express = require('express');
 var mongoose = require('mongoose');
+
+// middleware
+// var morgan = require('morgan');
+// var bodyParser = require('body-parser');
+
 var movieController = require('./movies/movieController.js');
 
 var app = express();
@@ -10,6 +15,12 @@ mongoose.connect('mongodb://localhost/watchful');
 // configure our server with all the middleware and routing
 // require('./config/middleware.js')(app, express);
 // require('./config/routes.js')(app, express);
+
+// middleware
+// app.use(morgan('dev'));
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
+// app.use(express.static(__dirname + '/../../client'));
 
 app.use(express.static(__dirname + '/../client'));
 

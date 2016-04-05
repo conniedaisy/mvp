@@ -17,6 +17,6 @@ angular.module('watchful', [
       controller: 'SearchController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/search'
     });
 }));

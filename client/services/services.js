@@ -20,6 +20,7 @@ angular.module('watchful.services', [])
     });
   };
   var getAll = function() {
+    console.log('getAll is called');
     return $http({
       method: 'GET',
       url: '/api/mymovies'
