@@ -21,18 +21,37 @@ module.exports = {
     });
   },
 
+
   // for app.post('/search')
+  searchMovies: function(request, response, next) {
+    //request is partial title from search box
+    
+  },
+
+
+
+
   // if movie exists in database, respond with movie info
   // else, add movie to database
   newMovie: function(request, response, next) {
+    // check if movie already exists in database
+    var id = request.body.id;
+    findMovie({id: id})
+    .then(function(found) {
+      if (found) {
+        response.send(found);
+      } else {
+        // TODO: if not found, post
+      }
+    })
+    .then(function() {
+
+    })
+
 
   },
 
   // newLink: function (req, res, next) {
-  //   var url = req.body.url;
-  //   if (!util.isValidUrl(url)) {
-  //     return next(new Error('Not a valid url'));
-  //   }
 
   //   findLink({url: url})
   //     .then(function (match) {

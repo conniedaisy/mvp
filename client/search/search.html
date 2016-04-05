@@ -10,6 +10,7 @@
   <h2>Search</h2>
   <form name="searchForm" ng-submit="searchTitle()" novalidate>
     <input name="input" type="search"
+      ng-model="searchString"
       placeholder="Search titles" required
     />
     <button>search</button>

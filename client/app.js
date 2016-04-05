@@ -1,6 +1,7 @@
 angular.module('watchful', [
   'watchful.mymovies',
   'watchful.search',
+  'watchful.services',
   'ngRoute'
 ])
 .config((function ($routeProvider) {
