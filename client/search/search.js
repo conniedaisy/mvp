@@ -2,7 +2,7 @@ angular.module('watchful.search', [])
 
 .controller('SearchController', function ($scope, $location, SearchRequest, MovieTitle) {
 
-  $scope.baseuri = 'http://image.tmdb.org/t/p/w185';
+  $scope.baseuri = 'http://image.tmdb.org/t/p/w342';
   $scope.results = {};
   $scope.searchString = '';
   
