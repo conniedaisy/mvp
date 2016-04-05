@@ -6,6 +6,8 @@ var helpers = require('../helpers.js');
 var findMovie = Q.nbind(Movie.findOne, Movie); // Same as Model.find, but only receives a single document as second parameter
 var findAllMovies = Q.nbind(Movie.find, Movie); // Model.find(query, fields, options, callback), callback = function(err, docs) {}; docs is an array
 var createMovie = Q.nbind(Movie.create, Movie); 
+// var collectData = Q.nbind(helpers.collectData); 
+
 
 
 module.exports = {
@@ -26,23 +28,33 @@ module.exports = {
   // if movie exists in database, respond with movie info
   // else, add movie to database
   addMovie: function(request, response, next) {
-    // check if movie already exists in database
     helpers.collectData(request, function(data) {
-      console.log('request is: ', data);
-      
+      console.log('request is: ', JSON.parse(data).id);
+      var data = JSON.parse(data);
+      // check if movie already exists in database using movieID
+      var id = data.id;
+      findMovie({id: id}, function(found) {
+        if (found) {
+          response.send(found);
+        } else {
+          // post
+          var newMovie = {
+            id: data.id,
+            title: data.title,
+            release: data['release_date'],
+            thumbnail: data['poster_path'],
+            watched: 0
+          }
+          createMovie(newMovie, function(success, error) {
+            if (success) {
+              response.json(success);
+            } else {
+              response.send(error);
+            }
+          });
+        }
+      });
     });
-    // var id = request.body.id;
-    // findMovie({id: id})
-    // .then(function(found) {
-    //   if (found) {
-    //     response.send(found);
-    //   } else {
-    //     // TODO: if not found, post
-    //   }
-    // })
-    // .then(function() {
-
-    // })
   }
 
   // newLink: function (req, res, next) {
