@@ -19,7 +19,17 @@ angular.module('watchful.services', [])
       data: movie
     });
   };
+  var getAll = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/mymovies'
+    })
+    .then(function (response) {
+      return response.data;
+    });
+  };
   return {
-    addMovie: addMovie
+    addMovie: addMovie,
+    getAll: getAll
   };
 }]);
