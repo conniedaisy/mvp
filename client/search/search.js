@@ -16,10 +16,10 @@ angular.module('watchful.search', [])
     }); //asynchronous
   };
 
-  $scope.addMovieToDb = function() {
-    console.log('clicked');
-    console.log($scope.results);
-    MovieTitle.addMovie($scope.results[0]);
+  $scope.addMovieToDb = function(result) {
+    // console.log('clicked');
+    console.log('click result: ', result);
+    MovieTitle.addMovie(result);
   };
 
 });

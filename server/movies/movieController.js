@@ -36,6 +36,8 @@ module.exports = {
       var data = JSON.parse(data);
       // check if movie already exists in database using movieID
       console.log('data received: ', data);
+      
+
       // HERE IS WHERE IT BREAKS
 
       // need to check if db already exists!!!
@@ -55,17 +57,39 @@ module.exports = {
             release: data['release_date'],
             thumbnail: data['poster_path'],
             watched: 0
-          }
+          };
           console.log('newMovie: ', newMovie);
-          createMovie(newMovie, function(success, error) {
-            console.log('success adding movie');
+
+          Movie(newMovie)
+          .save(function(success, error) {
             if (success) {
+              console.log('success adding movie');
+              console.log('success: ', success);
               response.json(success);
             } else {
-              console.log('error adding movie');
+              console.log('error adding movie: ', error);
               response.send(error);
             }
           });
+
+
+          // createMovie(newMovie)
+          // .then(function(success) {
+          //   response.json(success);
+          // })
+          // .fail(function(error) {
+          //   response.send(error);
+          // });
+
+          // createMovie(newMovie, function(success, error) {
+          //   console.log('success adding movie');
+          //   if (success) {
+          //     response.json(success);
+          //   } else {
+          //     console.log('error adding movie');
+          //     response.send(error);
+          //   }
+          // });
         // }
       // });
     });
@@ -121,4 +145,12 @@ module.exports = {
 //   "vote_count":877,
 //   "video":false,
 //   "vote_average":6.86
+// }
+
+// {
+// id: 1,
+// title: 'Mean Girls',
+// release: 2010,
+// thumbnail: 'somepath',
+// watched: 0
 // }
