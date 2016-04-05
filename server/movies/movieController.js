@@ -35,13 +35,18 @@ module.exports = {
       // check if movie already exists in database using movieID
       console.log('data received: ', data);
       // HERE IS WHERE IT BREAKS
-      findMovie({id: data.id}, function(found) {
-        console.log('checking if movie already exists');
-        if (found) {
-          response.send(found);
-        } else {
-          console.log('movie not found, adding new movie');
+
+      // need to check if db already exists!!!
+      // findMovie is NOT working
+      // findMovie({id: data.id}, function(found) {
+      //   console.log('checking if movie already exists');
+      //   if (found) {
+      //     response.send(found);
+      //   } else {
+      //     console.log('movie not found, adding new movie');
+
           // post
+          // data is not being posted correctly
           var newMovie = {
             id: data.id,
             title: data.title,
@@ -49,6 +54,7 @@ module.exports = {
             thumbnail: data['poster_path'],
             watched: 0
           }
+          console.log('newMovie: ', newMovie);
           createMovie(newMovie, function(success, error) {
             console.log('success adding movie');
             if (success) {
@@ -58,8 +64,8 @@ module.exports = {
               response.send(error);
             }
           });
-        }
-      });
+        // }
+      // });
     });
   }
 
