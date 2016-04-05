@@ -1,13 +1,30 @@
 <div id='container' ng-controller='MymoviesController'>
   
-  <div class="navigation">
+
+<nav class="navbar navbar-default">
+
+<!--   <div class="navigation">
+    <ul>
+      <li><a href="#/mymovies">My Movies</a></li>
+      <li><a class='selected' href="#/search">Search</a></li>
+    </ul>
+  </div> -->
+
+  <ul class="nav navbar-nav">
+    <li><a href="#/mymovies">My Movies</a></li>
+    <li><a href="#/search">Search</a></li>
+  </ul>
+
+</nav>
+
+<!--   <div class="navigation">
     <ul>
       <li><a class='selected' href="#/mymovies">My Movies</a></li>
       <li><a href="#/search">Search</a></li>
     </ul>
   </div>
   
-  <h2>My Movies</h2>
+  <h2>My Movies</h2> -->
 
   <div class="results">
     <div class="result" ng-repeat="movie in movies">
