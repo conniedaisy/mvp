@@ -9,4 +9,17 @@ angular.module('watchful.services', [])
   return {
     byKeyword: byKeyword
   };
+}])
+
+.factory('MovieTitle', ['$http', function($http) {
+  var addMovie = function (movie) {
+    return $http({
+      method: 'POST',
+      url: '/api/mymovies',
+      data: movie
+    });
+  };
+  return {
+    addMovie: addMovie
+  };
 }]);
