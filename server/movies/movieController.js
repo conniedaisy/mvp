@@ -10,7 +10,7 @@ var createMovie = Q.bind(Movie.create, Movie);
 module.exports = {
 
   // for app.get('/mymovies')
-  // respond with all movies
+  // get all movies from MongoDB
   allMovies: function(request, response, next) {
     findAllMovies({}) // returns all movies in an array
     .then(function(movies) {
@@ -21,19 +21,10 @@ module.exports = {
     });
   },
 
-
-  // for app.post('/search')
-  searchMovies: function(request, response, next) {
-    //request is partial title from search box
-    
-  },
-
-
-
-
+  // user clicks on a movie from search
   // if movie exists in database, respond with movie info
   // else, add movie to database
-  newMovie: function(request, response, next) {
+  addMovie: function(request, response, next) {
     // check if movie already exists in database
     var id = request.body.id;
     findMovie({id: id})
