@@ -6,15 +6,14 @@ angular.module('watchful.search', [])
   $scope.results = {};
 
   $scope.searchTitle = function () {
-    // console.log("SearchRequest: ", SearchRequest.byKeyword({query: $scope.searchString}));
-    SearchRequest.byKeyword({query: $scope.searchString})
-    .then(function(data) {
-      $scope.results = data.results; // an array of objects
-      // $location.path('/');
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    SearchRequest.byKeyword({query: $scope.searchString}, function(success) {
+      $scope.results = JSON.parse(success).results;
+      return success;
+    }, function(error) {
+      console.log('there is an error');
+      console.log('error: ', error);
+      return error;
+    }); //asynchronous
 
   };
 

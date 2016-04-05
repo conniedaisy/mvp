@@ -2,9 +2,9 @@ var Q = require('q');
 var Movie = require('./movieModel.js');
 
 // Promisify mongoose model methods with the `q` promise library
-var findMovie = Q.bind(Movie.findOne, Movie); // Same as Model.find, but only receives a single document as second parameter
+var findMovie = Q.nbind(Movie.findOne, Movie); // Same as Model.find, but only receives a single document as second parameter
 var findAllMovies = Q.nbind(Movie.find, Movie); // Model.find(query, fields, options, callback), callback = function(err, docs) {}; docs is an array
-var createMovie = Q.bind(Movie.create, Movie); 
+var createMovie = Q.nbind(Movie.create, Movie); 
 
 
 module.exports = {
