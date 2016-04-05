@@ -19,7 +19,7 @@ angular.module('watchful.search', [])
   $scope.addMovieToDb = function() {
     console.log('clicked');
     console.log($scope.results);
-    MovieTitle.addMovie($scope.results.title);
+    MovieTitle.addMovie($scope.results[0]);
   };
 
 });

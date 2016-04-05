@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var movieController = require('./movies/movieController.js');
 
 var app = express();
 
@@ -27,6 +28,9 @@ app.get('/mymovies', function(request, response) {
 app.post('/search', function(request, response) {
 
 });
+
+app.post('/api/mymovies', movieController.addMovie);
+
 
 
 // start listening to requests on port 3000
