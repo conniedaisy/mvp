@@ -7,7 +7,7 @@ angular.module('watchful.mymovies', [])
   var displayMovies = function() {
     MovieTitle.getAll()
     .then(function(movies) {
-      // console.log(movies);
+      console.log('displaying: ', Array.isArray(movies));
       $scope.movies = movies;
     })
     .catch(function (error) {
@@ -16,5 +16,5 @@ angular.module('watchful.mymovies', [])
   };
 
   displayMovies();
-  
+
 });

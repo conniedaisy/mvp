@@ -15,15 +15,25 @@ module.exports = {
   // for app.get('/mymovies')
   // get all movies from MongoDB
   getAllMovies: function(request, response, next) {
-    console.log('getting all movies');
-    findAllMovies({}) // returns all movies in an array
-    .then(function(movies) {
-      console.log(movies);
-      response.json(movies);
-    })
-    .fail(function(err) {
-      next(error);
+    // console.log('getting all movies');
+
+    Movie.find({}, function(error, success) {
+      if (error) {
+        response.send(error);
+      } else {
+        console.log('all movies: ', success);
+        response.send(success);
+      }
     });
+
+
+    // findAllMovies({}) // returns all movies in an array
+    // .then(function(movies) {
+    //   response.json(movies);
+    // })
+    // .fail(function(err) {
+    //   next(error);
+    // });
   },
 
   // user clicks on a movie from search
