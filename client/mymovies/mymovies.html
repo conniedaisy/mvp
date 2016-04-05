@@ -11,7 +11,9 @@
 
   <div class="results">
     <div class="result" ng-repeat="movie in movies">
-<!--       <img src={{ result["poster_path"] }}">   -->
+      <img class="poster" 
+      ng-src="{{ baseuri+movie['thumbnail'] }}" 
+      />  
       <div class="info">
         <div class="title">{{ movie.title }}</div>
         <div class="year">{{ movie["release_date"] }}</div>
