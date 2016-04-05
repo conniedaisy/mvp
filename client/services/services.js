@@ -1,14 +1,18 @@
-angular.module('watchful.services', [])
+angular.module('watchful.services', ['watchful.moviedb'])
 
-.factory('SearchRequest', function ($http, TheMovieDb) {
+.factory('SearchRequest', ['$http', 'TheMovieDb', function ($http, TheMovieDb) {
 
-  return byKeyword = function(keyword) {
+  var byKeyword = function(keyword) {
     // use theMovieDb getMovies method
-    TheMovieDb.keywords.getMovies(keyword, function(error) {
+    console.log("TheMOvieDb: ", TheMovieDb);
+    TheMovieDb.getMovies(keyword, function(error) {
       console.log(error);
     }, function(success) {
       console.log(success); 
     });
-  }
+  };
 
-});
+  return {
+    byKeyword: byKeyword
+  };
+}]);
