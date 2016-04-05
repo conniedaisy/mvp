@@ -43,6 +43,7 @@ module.exports = {
             title: data.title,
             release: data['release_date'],
             thumbnail: data['poster_path'],
+            description: data.overview,
             watched: 0
           };
           Movie(newMovie)
@@ -86,5 +87,6 @@ module.exports = {
 // title: 'Mean Girls',
 // release: 2010,
 // thumbnail: 'somepath',
+// description: 'somedescription'
 // watched: 0
 // }
