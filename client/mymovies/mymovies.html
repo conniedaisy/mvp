@@ -7,23 +7,22 @@
     </ul>
   </nav>
 
-
-
   <div class="row">
-      <div class="col-md-6" ng-repeat="movie in movies">
-          <div class="thumbnail">
-              <div class="clearfix">
-                <div>{{ movie.title }}</div>
-                  <img class="pull left" ng-src="{{ baseuri+movie['thumbnail'] }}" alt="movie poster"/>
-                  <div class="pull right">hello</div>
-              </div>
-              </div>
-          <div>
-      </div>
+    <div class="col-md-6" ng-repeat="movie in movies">
+      <div class="thumbnail">
+        <div>{{ movie.title }}</div>
+          <img class="pull-left" ng-src="{{ baseuri+movie['thumbnail'] }}" alt="movie poster"/>
+          <div class="form-group">
+            <label for="comment">Notes:</label>
+            <textarea class="form-control box" rows="3" id="comment"></textarea>
+          </div>
+        </div>
+    </div>
   </div>
+</div>
 
 
-  <div class="results">
+<!--   <div class="results">
     <div class="result" ng-repeat="movie in movies">
       <img class="poster" 
       ng-src="{{ baseuri+movie['thumbnail'] }}" 
@@ -37,7 +36,7 @@
           <span ng-click="addCount(movie.watched)"> + </span></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 </div>
