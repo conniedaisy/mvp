@@ -2,7 +2,7 @@ angular.module('watchful.mymovies', [])
 
 .controller('MymoviesController', function ($scope, $location, MovieTitle) {
 
-  $scope.baseuri = 'http://image.tmdb.org/t/p/w92';
+  $scope.baseuri = 'http://image.tmdb.org/t/p/w185';
   $scope.movies = {};
 
   // need to fetch count from database

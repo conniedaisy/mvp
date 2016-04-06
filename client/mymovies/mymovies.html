@@ -1,43 +1,24 @@
 <div id='container' ng-controller='MymoviesController'>
   
-
   <nav class="navbar navbar-default">
-
-  <!--   <div class="navigation">
-      <ul>
-        <li><a href="#/mymovies">My Movies</a></li>
-        <li><a class='selected' href="#/search">Search</a></li>
-      </ul>
-    </div> -->
-
     <ul class="nav navbar-nav">
       <li><a href="#/mymovies">My Movies</a></li>
       <li><a href="#/search">Search</a></li>
     </ul>
-
   </nav>
 
-<!--   <div class="navigation">
-    <ul>
-      <li><a class='selected' href="#/mymovies">My Movies</a></li>
-      <li><a href="#/search">Search</a></li>
-    </ul>
-  </div>
-  
-  <h2>My Movies</h2> -->
 
 
   <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4">
-          <img src="http://pizzafactorytricity.ca/home/wp-content/uploads/2011/07/3-pizza4-300x282.jpg" alt="..."/>
-      </div>
-
-      <div class="col-sm-12 col-md-6 col-lg-8">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-          </div>            
+      <div class="col-md-6" ng-repeat="movie in movies">
+          <div class="thumbnail">
+              <div class="clearfix">
+                <div>{{ movie.title }}</div>
+                  <img class="pull left" ng-src="{{ baseuri+movie['thumbnail'] }}" alt="movie poster"/>
+                  <div class="pull right">hello</div>
+              </div>
+              </div>
+          <div>
       </div>
   </div>
 
@@ -57,5 +38,6 @@
       </div>
     </div>
   </div>
+
 
 </div>

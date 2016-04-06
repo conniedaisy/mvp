@@ -40,9 +40,9 @@
 
       <!-- <div class="result" > -->
   <div class="row">
-    <div class="col-sm-4 col-md-4" ng-repeat="result in results">
+    <div class="col-sm-3 col-md-3" ng-repeat="result in results">
       <div class="thumbnail" >
-        <img ng-src="{{ baseuri+result['poster_path'] }}" ng-click="addMovieToDb(result)">
+        <img ng-src="{{ baseuri+result['poster_path'] }}" ng-click="addMovieToDb(result)" alt="movie poster">
         <div class="caption">
           <h3 ng-click="addMovieToDb(result)">{{ result.title }}</h3>
           <p>{{ result["release_date"] }}</p>
